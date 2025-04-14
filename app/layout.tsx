@@ -1,26 +1,22 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_KR } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-const notoSans = Noto_Sans_KR({ 
-  subsets: ['latin'],
-  weight: ['100', '300', '400', '500', '700', '900'],
-  variable: '--font-noto-sans',
-})
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: '라프텔 카페',
-  description: '특별한 순간을 이곳에서',
+  title: 'Cafe Laftel',
+  description: 'Cafe Laftel - A cozy cafe in the heart of the city',
 }
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="ko" className={notoSans.variable}>
-      <body>{children}</body>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
     </html>
   )
 } 
